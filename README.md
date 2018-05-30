@@ -15,12 +15,13 @@ Grab `vue-tabs.js` from the `dist` folder and include it using a regular `script
 <script src="js/vue-tabs.js"></script>
 ```
 
-### Usage
+### Initialization
 
-###### webpack import
-`import { Tabs, Tab } from '@moodles/vue-tabs';`
+###### webpack
 
 ```
+import { Tabs, Tab } from '@moodles/vue-tabs';
+
 const app = new Vue({
     el: '#app',
     components: {
@@ -30,8 +31,22 @@ const app = new Vue({
 })
 ```
 
-###### component usage
+###### browser
 
+```
+<script src="js/vue.js"></script>
+<script src="js/vue-tabs.js"></script>
+
+<script>
+    Vue.use(VueTabs);
+
+    var app = new Vue({
+        el: '#app',
+    });
+</script>
+```
+
+### Component usage
 ```
 <tabs>
     <tab title="Tab 1">
