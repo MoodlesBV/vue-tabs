@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="tabs is-fullwidth">
+        <div class="tabs is-fullwidth" :class="equalWidthTabs">
             <ul>
                 <li :class="{ 'is-active': openTab == tab.id }" v-for="tab in tabs" :key="tab.id">
                     <a href="#" @click="setActiveTab(tab)">
@@ -18,10 +18,23 @@
 <script>
     export default {
         name: 'tabs',
+        props: {
+            equalWidth: {
+                type: Boolean,
+                default: false
+            }
+        },
         data() {
             return {
                 tabs: this.$children,
                 openTab: null
+            }
+        },
+        computed: {
+            equalWidthTabs() {
+                if (this.equalWidth) {
+                    return ['has-equal-width-tabs'];
+                }
             }
         },
         mounted() {
@@ -59,6 +72,14 @@
         overflow: hidden;
         overflow-x: auto;
         white-space: nowrap;
+
+        &.has-equal-width-tabs {
+
+            li {
+                flex: 1;
+            }
+        }
+
         a {
             -webkit-box-align: center;
             -ms-flex-align: center;

@@ -60,3 +60,14 @@ const app = new Vue({
     </tab>
 </tabs>
 ```
+
+###### `Tabs` props
+
+| prop       | type    | default |
+| ---------- | ------- | ------- |
+| equalWidth | Boolean | `false` |
+
+###### `Tab` props
+| prop  | type    | default |
+| ----- | ----    | ------- |
+| title | String  | `''`    |
