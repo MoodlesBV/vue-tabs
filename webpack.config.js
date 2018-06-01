@@ -4,7 +4,11 @@ var webpack = require('webpack')
 
 module.exports = {
   entry: './src/index.js',
-
+  devServer: {
+    contentBase: path.join(__dirname, 'demo'),
+    publicPath: '/assets/',
+  },
+  mode: 'development',
   module: {
     rules: [
       // use babel-loader for js files

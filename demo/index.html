@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    [v-cloak] {
+        display: none;
+    }
+
+    #demo {
+        width: 500px;
+    }
+</style>
+<body>
+    <div id="demo" v-cloak>
+        <tabs :equal-width="true">
+            <tab title="Tab 1">
+                Tab 1 content
+            </tab>
+            <tab title="Tab 2">
+                Tab 2 content
+            </tab>
+            <tab title="Tab 3">
+                Tab 3 content
+            </tab>
+        </tabs>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="/assets/vue-tabs.js"></script>
+
+    <script>
+        Vue.use(VueTabs);
+
+        var app = new Vue({
+            el: '#demo',
+        });
+    </script>
+</body>
+</html>
